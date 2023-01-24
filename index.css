@@ -70,14 +70,15 @@ nav img {
   margin-top: 100px;
 }
 .welcomeText h1 {
-  margin-left: 25%;
-  margin-bottom: -20px;
+  margin-left: 10%;
   font-family: "Indie Flower", cursive;
   font-weight: 700;
   font-size: 80px;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #221817;
+  position: relative;
+  width: 650px;
 }
 .welcomeText h1:hover {
   color: #f1f5f2;
@@ -90,9 +91,13 @@ nav img {
   line-height: 3;
   margin-left: 30px;
   color: #221817;
-  position: absolute;
+  position: relative;
   width: 500px;
-  top: 90px;
+}
+.welcomeText #headshot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .welcomeText .line {
   background-image: url(assets/drawings/line.png);
@@ -133,9 +138,6 @@ nav img {
   background-size: 100% 100%;
   padding: 20px;
   margin: 0px -15px;
-}
-.welcomeText img {
-  height: 100px;
 }
 
 .linksToSection {
@@ -614,17 +616,22 @@ footer a {
     overflow: auto;
   }
   .splashScreen #headshot {
-    height: 60vh;
-    position: absolute;
-    right: 0;
-    bottom: -80px;
+    height: 50vh;
+    position: relative;
+  }
+  .welcomeText {
+    position: relative;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    width: 100vw;
   }
   .welcomeText h1 {
-    position: absolute;
     font-size: 2rem;
-    transform: translateY(-250px);
     margin: 5px;
     text-align: center;
+    width: 90vw;
   }
   .welcomeText p {
     display: flex;
