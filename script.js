@@ -232,3 +232,8 @@ function changeSeek4 () {
     audioBook.currentTime = (timeline4.value * audioBook.duration) / 100
 }
 timeline4.addEventListener('change', changeSeek4)
+
+const loaderContainer = document.querySelector('.loader-container');
+window.addEventListener('load', () => {
+    loaderContainer.style.display = 'none';
+});

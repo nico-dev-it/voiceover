@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <script src="script.js" defer></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;400;500;700&family=Amatic+SC:wght@400;700&family=Indie+Flower&family=Poppins:wght@300&display=swap"
           rel="stylesheet">
     <title>Toby Underwood | Voiceover </title>
 </head>
 <nav>
     <h2>Toby Underwood<span class="mic">🎙</span>Voiceover </h2>
-    <a href="https://www.instagram.com/toby_underwood/"> <img src="assets/svg/ig.svg" alt="instagram logo"></a>
+    <a href="https://www.instagram.com/toby_underwood/" target="_blank"> <img src="assets/svg/ig.svg" alt="instagram logo"></a>
 </nav>
 <body>
+<div class="loader-container">
+    <div class="spinner"></div>
+</div>
 <section class="splashScreen">
     <div class="welcomeText">
         <p><span class="line"><span class="stroke2"></span>Toby has a <span class="arrowUp">friendly</span>, <span
@@ -630,14 +634,14 @@
     <p>To get in touch with me, you can find on social media or send me a message here!</p>
     <div class="contactContainer">
         <div class="linksContainer">
-            <a href="#"> <img src="assets/svg/mail.svg" alt="email logo"></a>
+            <a href="mailto:toby_underwood@yahoo.co.uk"> <img src="assets/svg/mail.svg" alt="email logo"></a>
             <a href="https://www.instagram.com/toby_underwood/"> <img src="assets/svg/ig.svg" alt="instagram logo"></a>
             <a href="#"> <img src="assets/img/spotlight.png" alt="spotlight logo"></a>
 
         </div>
-            <form method="post" action="form.php">
+        <form action="form.php" method="post" id="form">
                 <label for='name'>name</label>
-                <input id="name" type="text" name="name"  required>
+                <input id="name" type="text" name="name" required>
                 <label for='email'>email</label>
                 <input id="email" type="text" name="email"  required>
                 <label for='message'>message</label>

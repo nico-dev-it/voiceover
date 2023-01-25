@@ -55,6 +55,15 @@ $gradient-radial: radial-gradient(#14281dff, #c2a878ff, #f1f5f2ff, #008000ff, #0
   font-weight: 700;
 }
 
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: $dark-brown
+  url("https://media.giphy.com/media/grNkIEN4dkiMXFLIE9/giphy.gif") center  no-repeat;
+  z-index: 1;
+}
+
 body {
   margin: 0;
   background-color: #f1f5f2;
