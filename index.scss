@@ -9,7 +9,7 @@ $gradient-top: linear-gradient(0deg, #14281dff, #c2a878ff, #f1f5f2ff, #008000ff,
 $gradient-right: linear-gradient(90deg, #14281dff, #c2a878ff, #f1f5f2ff, #008000ff, #03256cff);
 $gradient-bottom: linear-gradient(180deg, #14281dff, #c2a878ff, #f1f5f2ff, #008000ff, #03256cff);
 $gradient-left: linear-gradient(270deg, #14281dff, #c2a878ff, #f1f5f2ff, #008000ff, #03256cff);
-$gradient-top-right: linear-gradient(45deg,#c2a878ff, #f1f5f2ff);
+$gradient-top-right: linear-gradient(45deg, rgba(194, 168, 120, 0.5), rgba(241, 245, 242, 0.5));
 $gradient-bottom-right: linear-gradient(135deg, #14281dff, #c2a878ff, #f1f5f2ff, #008000ff, #03256cff);
 $gradient-top-left: linear-gradient(225deg, #14281dff, #c2a878ff, #f1f5f2ff, #008000ff, #03256cff);
 $gradient-bottom-left: linear-gradient(315deg, #14281dff, #c2a878ff, #f1f5f2ff, #008000ff, #03256cff);
@@ -61,7 +61,7 @@ $gradient-radial: radial-gradient(#14281dff, #c2a878ff, #f1f5f2ff, #008000ff, #0
   position: fixed;
   background: $dark-brown
   url("https://media.giphy.com/media/grNkIEN4dkiMXFLIE9/giphy.gif") center  no-repeat;
-  z-index: 1;
+  z-index: 2;
 }
 
 body {
@@ -114,8 +114,12 @@ nav {
 }
 
 .welcomeText {
-  margin-top: 100px;
-  h1 {
+
+  .content {
+    position: relative;
+    width: 60vw;
+  }
+  .mainTitle {
     margin-left: 10%;
     font-family: 'Indie Flower', cursive;
     font-weight: 700;
@@ -124,7 +128,8 @@ nav {
     letter-spacing: 2px;
     color: $dark-brown;
     position: relative;
-    width: 650px;
+    line-height: 1.5;
+    text-align: start;
     &:hover {
       color: $powder;
       transition: 1s;
@@ -138,18 +143,22 @@ nav {
     margin-left: 30px;
     color: $dark-brown;
     position: relative;
-    width: 500px;
+    text-align: center;
+    width: 50vh;
   }
   #headshot {
     position: absolute;
     bottom: 0;
     right: 0;
+    top: 1px;
   }
 
   .line {
     background-image: url(assets/drawings/line.png);
     background-size: 100% 100%;
-    padding: 30px 30px 60px;
+    padding: 30px 30px 50px;
+    position: relative;
+    bottom: -30px;
   }
 
   .circle {
@@ -323,7 +332,7 @@ nav {
   gap: 10px;
   padding: 10px;
   margin: 10px;
-  width: 15%;
+  width: 250px;
   border: 2px solid $beige;
   border-radius: 30px;
 }
@@ -598,6 +607,7 @@ form button {
   width: 150px;
   background-color: $powder;
   border: 2px solid $powder;
+  color: $dark-brown;
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -637,14 +647,26 @@ footer {
 
 @media screen and (max-width: 1200px) and (min-width: 780px) {
   .welcomeText {
-    h1 {
+    .mainTitle {
+      position: relative;
+      font-size: 3rem;
+      width: 35vh;
+    }
+    .content {
       position: absolute;
-      font-size: 2.5rem;
-      transform: translateY(-400px);    }
+      top: 100px;
+      width: 60vw;
+    }
+
+    .line {
+      bottom: 0;
+    }
+
   }
   .splashScreen #headshot {
     margin-top: 400px;
     height: 70vh;
+    top: 0;
   }
   #aboutMe {
     @include centeredMobile;
@@ -660,30 +682,45 @@ footer {
       @include centeredMobile;
       margin-top: 10px;
     }
+    .demos {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+    }
   }
 }
 
 @media screen and (max-width: 780px) {
   .splashScreen {
-    overflow: auto;
+    overflow: hidden;
 
     #headshot {
       height: 50vh;
-      position: relative;
+      position: absolute;
+      top: auto;
     }
   }
   .welcomeText {
     position: relative;
-    top: 50px;
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
-    h1 {
+    .content {
+      top: 100px;
+    }
+    .mainTitle {
       font-size: 2rem;
-      margin: 5px;
       text-align: center;
-      width: 90vw;
+      width: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .circle {
+      margin-top: -30px;
     }
 
     p {
@@ -697,7 +734,7 @@ footer {
     }
 
     .line {
-      padding: 3px 3px 70px;
+      padding: 3px 3px 60px;
     }
 
   }

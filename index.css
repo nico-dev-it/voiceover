@@ -22,7 +22,7 @@
   height: 100vh;
   position: fixed;
   background: #221817 url("https://media.giphy.com/media/grNkIEN4dkiMXFLIE9/giphy.gif") center no-repeat;
-  z-index: 1;
+  z-index: 2;
 }
 
 body {
@@ -66,7 +66,7 @@ nav img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(45deg, #c2a878, #f1f5f2);
+  background: linear-gradient(45deg, rgba(194, 168, 120, 0.5), rgba(241, 245, 242, 0.5));
 }
 .splashScreen img {
   margin-top: 120px;
@@ -74,10 +74,11 @@ nav img {
   width: auto;
 }
 
-.welcomeText {
-  margin-top: 100px;
+.welcomeText .content {
+  position: relative;
+  width: 60vw;
 }
-.welcomeText h1 {
+.welcomeText .mainTitle {
   margin-left: 10%;
   font-family: "Indie Flower", cursive;
   font-weight: 700;
@@ -86,9 +87,10 @@ nav img {
   letter-spacing: 2px;
   color: #221817;
   position: relative;
-  width: 650px;
+  line-height: 1.5;
+  text-align: start;
 }
-.welcomeText h1:hover {
+.welcomeText .mainTitle:hover {
   color: #f1f5f2;
   transition: 1s;
 }
@@ -100,17 +102,21 @@ nav img {
   margin-left: 30px;
   color: #221817;
   position: relative;
-  width: 500px;
+  text-align: center;
+  width: 50vh;
 }
 .welcomeText #headshot {
   position: absolute;
   bottom: 0;
   right: 0;
+  top: 1px;
 }
 .welcomeText .line {
   background-image: url(assets/drawings/line.png);
   background-size: 100% 100%;
-  padding: 30px 30px 60px;
+  padding: 30px 30px 50px;
+  position: relative;
+  bottom: -30px;
 }
 .welcomeText .circle {
   background-image: url(assets/drawings/greenCircle.png);
@@ -290,7 +296,7 @@ nav img {
   gap: 10px;
   padding: 10px;
   margin: 10px;
-  width: 15%;
+  width: 250px;
   border: 2px solid #c2a878;
   border-radius: 30px;
 }
@@ -558,6 +564,7 @@ form button {
   width: 150px;
   background-color: #f1f5f2;
   border: 2px solid #f1f5f2;
+  color: #221817;
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -596,14 +603,23 @@ footer a {
 }
 
 @media screen and (max-width: 1200px) and (min-width: 780px) {
-  .welcomeText h1 {
+  .welcomeText .mainTitle {
+    position: relative;
+    font-size: 3rem;
+    width: 35vh;
+  }
+  .welcomeText .content {
     position: absolute;
-    font-size: 2.5rem;
-    transform: translateY(-400px);
+    top: 100px;
+    width: 60vw;
+  }
+  .welcomeText .line {
+    bottom: 0;
   }
   .splashScreen #headshot {
     margin-top: 400px;
     height: 70vh;
+    top: 0;
   }
   #aboutMe {
     margin: 0 120px;
@@ -618,28 +634,42 @@ footer a {
     margin: 0 120px;
     margin-top: 10px;
   }
+  #voiceover .demos, #contact .demos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 @media screen and (max-width: 780px) {
   .splashScreen {
-    overflow: auto;
+    overflow: hidden;
   }
   .splashScreen #headshot {
     height: 50vh;
-    position: relative;
+    position: absolute;
+    top: auto;
   }
   .welcomeText {
     position: relative;
-    top: 50px;
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 100vh;
     width: 100vw;
   }
-  .welcomeText h1 {
+  .welcomeText .content {
+    top: 100px;
+  }
+  .welcomeText .mainTitle {
     font-size: 2rem;
-    margin: 5px;
     text-align: center;
-    width: 90vw;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcomeText .circle {
+    margin-top: -30px;
   }
   .welcomeText p {
     display: flex;
@@ -651,7 +681,7 @@ footer a {
     transform: translateY(10px);
   }
   .welcomeText .line {
-    padding: 3px 3px 70px;
+    padding: 3px 3px 60px;
   }
   nav {
     height: 75px;
