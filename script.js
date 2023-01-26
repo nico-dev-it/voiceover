@@ -237,3 +237,18 @@ const loaderContainer = document.querySelector('.loader-container');
 window.addEventListener('load', () => {
     loaderContainer.style.display = 'none';
 });
+
+const test = document.getElementById('test')
+
+test.addEventListener("click", toggle)
+
+function toggle () {
+    swal({
+        icon: "success",
+    });
+setTimeout(redirect, 3000)
+}
+
+function redirect () {
+    window.open('https://www.instagram.com/toby_underwood/', "_blank");}
+
